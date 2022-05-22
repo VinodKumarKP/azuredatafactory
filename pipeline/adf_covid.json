@@ -12,7 +12,7 @@
 						"referenceName": "covid_population",
 						"type": "DatasetReference"
 					},
-					"timeout": "1.00:00:00",
+					"timeout": "0.00:00:10",
 					"sleep": 10,
 					"minimumSize": 1024
 				}
@@ -168,8 +168,8 @@
 				}
 			},
 			{
-				"name": "Get File Metadata_copy1",
-				"type": "GetMetadata",
+				"name": "Set variable1",
+				"type": "SetVariable",
 				"dependsOn": [
 					{
 						"activity": "check if file exists",
@@ -178,35 +178,19 @@
 						]
 					}
 				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "covid_population",
-						"type": "DatasetReference"
-					},
-					"fieldList": [
-						"exists",
-						"size",
-						"columnCount"
-					],
-					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings",
-						"recursive": true,
-						"enablePartitionDiscovery": false
-					},
-					"formatSettings": {
-						"type": "DelimitedTextReadSettings"
-					}
+					"variableName": "region",
+					"value": "USA"
 				}
 			}
 		],
+		"variables": {
+			"region": {
+				"type": "String",
+				"defaultValue": "USA"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2022-05-22T02:55:49Z"
 	},
