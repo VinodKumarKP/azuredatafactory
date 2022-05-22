@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactoryvkp"
+		},
+		"ls_covidblob_connectionString": {
+			"value": ""
+		},
+		"ls_covidgen2_accountKey": {
+			"value": ""
+		},
+		"ls_covidgen2_properties_typeProperties_url": {
+			"value": "https://covidreportingvkpgen2.dfs.core.windows.net"
+		},
+		"ls_httpcoviddata_properties_typeProperties_url": {
+			"value": "https://github.com"
+		},
+		"EventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/4cedc5dd-e3ad-468d-bf66-32e31bdb9148/resourceGroups/1-e4f2574d-playground-sandbox/providers/Microsoft.Storage/storageAccounts/covidreportingvkp"
+		}
+	}
+}
