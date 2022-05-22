@@ -13,6 +13,9 @@
 		},
 		"ls_covidgen2_properties_typeProperties_url": {
 			"value": "https://covidreportingvkpgen2.dfs.core.windows.net"
+		},
+		"EventTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/4cedc5dd-e3ad-468d-bf66-32e31bdb9148/resourceGroups/1-e4f2574d-playground-sandbox/providers/Microsoft.Storage/storageAccounts/covidreportingvkp"
 		}
 	}
 }
