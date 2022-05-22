@@ -65,12 +65,6 @@
 						"dependencyConditions": [
 							"Succeeded"
 						]
-					},
-					{
-						"activity": "Set variable1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
 					}
 				],
 				"userProperties": [],
@@ -174,8 +168,8 @@
 				}
 			},
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
+				"name": "Fail1",
+				"type": "Fail",
 				"dependsOn": [
 					{
 						"activity": "check if file exists",
@@ -186,17 +180,11 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "region",
-					"value": "USA"
+					"message": "over",
+					"errorCode": "400"
 				}
 			}
 		],
-		"variables": {
-			"region": {
-				"type": "String",
-				"defaultValue": "USA"
-			}
-		},
 		"annotations": [],
 		"lastPublishTime": "2022-05-22T02:55:49Z"
 	},
