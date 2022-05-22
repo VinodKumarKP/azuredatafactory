@@ -1,0 +1,24 @@
+{
+	"name": "EventTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "adf_covid",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/population/blobs/population_by_age.tsv.gz",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/4cedc5dd-e3ad-468d-bf66-32e31bdb9148/resourceGroups/1-e4f2574d-playground-sandbox/providers/Microsoft.Storage/storageAccounts/covidreportingvkp",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
