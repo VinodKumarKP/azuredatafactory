@@ -19,7 +19,15 @@
 					"name": "countrylookup"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"linkedService": {
+						"referenceName": "ls_covidgen2",
+						"type": "LinkedServiceReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "filterEuropeOnly"
@@ -74,7 +82,16 @@
 				"pivot1, countrylookup lookup(pivot1@country == countrylookup@country,",
 				"     multiple: false,",
 				"     pickup: 'any',",
-				"     broadcast: 'auto')~> lookup1"
+				"     broadcast: 'auto')~> lookup1",
+				"lookup1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'json',",
+				"     fileSystem: 'raw',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
